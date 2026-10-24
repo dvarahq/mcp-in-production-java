@@ -83,3 +83,5 @@ jbang CommerceAgent.java "Has delivery been booked for quote Q-1a2b3c4d? Keep ch
 
 A small local model usually gives up after a few calls. A more persistent agent hits the limit
 on the fifth.
+
+Stop DVARA with `./dvara/stop.sh` before the next lesson.
