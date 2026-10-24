@@ -55,3 +55,5 @@ A refused call is stopped before DVARA's tool-call and audit records, so it does
 | Loop detection (lesson 10) | Above 60 calls a minute in one **session**, refuses the call |
 | Monthly call quota | Without a licence, 100,000 governed calls a month; past it, tool calls get `402 mcp_cap_exceeded` until the 1st |
 | Workspace, team and account limits | For model traffic, narrower limits per workspace, team or account (DVARA rate-limiting docs) |
+
+Stop DVARA with `./dvara/stop.sh` before the next lesson.

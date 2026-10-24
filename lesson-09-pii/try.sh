@@ -21,8 +21,8 @@ echo "2. add_order_note. The agent sends:"
 echo "   $note"
 call add_order_note "{\"quoteId\":\"Q-1a2b3c4d\",\"note\":\"$note\"}" >/dev/null
 echo "   The server receives (its log):"
-sleep 1
 if [[ -f server.log ]]; then
+  for _ in 1 2 3 4 5; do grep -q 'note on' server.log && break; sleep 1; done
   grep 'note on' server.log | tail -1 | grep -oE 'received: .*' | sed 's/ trace=.*//; s/^/   /'
 else
   echo "   (start the server with: jbang CommerceServer.java | tee server.log)"

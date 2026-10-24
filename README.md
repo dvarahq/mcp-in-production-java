@@ -9,7 +9,7 @@ Every server and agent is a single Java file run with [JBang](https://www.jbang.
 - JBang: `curl -Ls https://sh.jbang.dev | bash -s - app setup`
 - A model. Default is free and local: [Ollama](https://ollama.com) with `ollama pull qwen3:8b`.
   Any OpenAI-compatible model works — see lesson 4.
-- From lesson 6: Docker with Compose v2.
+- From lesson 6: Docker with Compose v2. Lessons 6–13 run DVARA 1.12.0 with no licence key.
 
 ## Lessons
 
@@ -25,5 +25,6 @@ Every server and agent is a single Java file run with [JBang](https://www.jbang.
 | 10. Stop runaway agents | `lesson-10-runaway` | `./dvara/start.sh`, then `./runaway.sh` |
 | 11. Humans in the loop | `lesson-11-approval` | `./dvara/start.sh`, then `./refund.sh 49.00` |
 | 12. Limits | `lesson-12-limits` | `./dvara/start.sh`, then `./flood.sh` |
+| 13. Production checklist and capstone | `lesson-13-capstone` | `./dvara/start.sh`, then `./checklist.sh` |
 
 Each folder is complete. Start any lesson from its own folder.

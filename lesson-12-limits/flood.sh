@@ -22,7 +22,7 @@ call() { # token
 }
 denied() {
   curl -s http://localhost:8080/actuator/prometheus -H "Authorization: Bearer $DVARA_ACTUATOR_METRICS_API_KEY" \
-    | grep -E '^gateway_rate_limit_denied_total\{reason="request"\}' | awk '{print int($2)}'
+    | { grep -E '^gateway_rate_limit_denied_total\{reason="request"\}' || true; } | awk '{print int($2)}'
 }
 
 sales=$(token sales-bot)
