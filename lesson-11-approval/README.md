@@ -80,3 +80,5 @@ so a client can tell the user "this will need sign-off" before it calls.
 If the call is refused at once with "timed out" and nothing shows under **Approvals**, check the
 workspace region. A gateway may only act for workspaces in its own region; this lesson's gateway
 is in `default`, so the workspace is `region: default` (`dvara/bootstrap.yaml`).
+
+Stop DVARA with `./dvara/stop.sh` before the next lesson.

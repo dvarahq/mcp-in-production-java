@@ -24,5 +24,6 @@ Every server and agent is a single Java file run with [JBang](https://www.jbang.
 | 9. PII in tool arguments and results | `lesson-09-pii` | `./dvara/start.sh`, then `./try.sh` |
 | 10. Stop runaway agents | `lesson-10-runaway` | `./dvara/start.sh`, then `./runaway.sh` |
 | 11. Humans in the loop | `lesson-11-approval` | `./dvara/start.sh`, then `./refund.sh 49.00` |
+| 12. Limits | `lesson-12-limits` | `./dvara/start.sh`, then `./flood.sh` |
 
 Each folder is complete. Start any lesson from its own folder.

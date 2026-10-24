@@ -1,0 +1,30 @@
+{
+  "version": "1",
+  "workspaces": [
+    {
+      "id": "course",
+      "name": "MCP in Production",
+      "teamId": "default-team",
+      "status": "ACTIVE",
+      "region": "default",
+      "metadata": {
+        "pii.action": "REDACT",
+        "approval.required-tools": "issue_refund",
+        "approval.timeout-seconds": "120",
+        "approval.default-action": "deny"
+      }
+    }
+  ],
+  "mcp_servers": [
+    {
+      "id": "3f7cef93-79cc-4648-b060-8b93930d4c93",
+      "serverId": "commerce",
+      "workspaceId": "course",
+      "transport": "STREAMABLE_HTTP",
+      "url": "http://host.docker.internal:8070",
+      "endpointPath": "/mcp",
+      "status": "ACTIVE",
+      "tags": ["course"]
+    }
+  ]
+}
