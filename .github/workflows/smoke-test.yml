@@ -1,0 +1,27 @@
+name: smoke-test
+
+on: [push, pull_request]
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lesson-05-testing
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install JBang
+        run: |
+          curl -Ls https://sh.jbang.dev | bash -s - app setup
+          echo "$HOME/.jbang/bin" >> "$GITHUB_PATH"
+      - name: Start the MCP server
+        run: |
+          jbang CommerceServer.java > server.log 2>&1 &
+          for i in $(seq 1 60); do grep -q "Started CommerceServer" server.log && exit 0; sleep 2; done
+          cat server.log; exit 1
+      - name: Run the smoke test
+        run: jbang SmokeTest.java
