@@ -54,4 +54,4 @@ curl -s -o /dev/null -w "%{http_code}\n" http://localhost:8080/mcp \
 - Tool names arrive as `commerce__search_products`: DVARA prefixes each tool with its server,
   so tools from many servers can share one endpoint.
 
-Stop DVARA with `./dvara/stop.sh` (`--reset` also deletes its data and `.env`).
+Stop DVARA with `./dvara/stop.sh` before the next lesson (`--reset` also deletes its data and `.env`).

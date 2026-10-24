@@ -1,0 +1,12 @@
+# Read once by Flightdeck on first boot. Creates the course workspace and its API key
+# (start.sh writes the key value to .env as DVARA_API_KEY).
+workspaces:
+  - id: course
+    name: MCP in Production
+    status: ACTIVE
+    region: local
+
+api_keys:
+  - workspace: course
+    name: course-key
+    key: ${COURSE_API_KEY}

@@ -19,5 +19,6 @@ Every server and agent is a single Java file run with [JBang](https://www.jbang.
 | 4. Build the agent | `lesson-04-agent` | `jbang CommerceAgent.java "Quote me 3 USB-C cables"` |
 | 5. Test and debug MCP | `lesson-05-testing` | `jbang SmokeTest.java` |
 | 6. Put a gateway in front | `lesson-06-gateway` | `./dvara/start.sh`, then the agent |
+| 7. Authenticate MCP clients | `lesson-07-oauth` | `./dvara/start.sh`, then `./try.sh` |
 
 Each folder is complete. Start any lesson from its own folder.

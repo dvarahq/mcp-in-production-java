@@ -3,7 +3,7 @@
 # MCP server. No licence key: every feature runs for non-production use, limited to
 # 3 workspaces and 100,000 calls a month.
 
-name: mcp-course
+name: mcp-course-06
 
 services:
   postgres:
