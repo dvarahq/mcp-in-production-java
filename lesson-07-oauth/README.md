@@ -56,3 +56,5 @@ In Flightdeck (**MCP → Tool Calls**) each call now names the agent that made i
 - **Agent**: `oauthToken()` replaces `dvaraKey()`. It gets a token with the client-credentials grant
   and sends it on every MCP request.
 - **Server**: unchanged.
+
+Stop DVARA with `./dvara/stop.sh` before the next lesson.
