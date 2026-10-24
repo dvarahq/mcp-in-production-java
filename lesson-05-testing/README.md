@@ -12,7 +12,7 @@ jbang CommerceServer.java
 npx @modelcontextprotocol/inspector
 ```
 
-Streamable HTTP, `http://localhost:8090/mcp`. Call each tool by hand.
+Streamable HTTP, `http://localhost:8070/mcp`. Call each tool by hand.
 
 ## 2. Check: smoke test
 
@@ -31,6 +31,6 @@ It connects like an agent, lists the tools, calls each one and checks the answer
 | You see | Cause | Fix |
 |---|---|---|
 | `required property 'arg0' not found` | Compiled without parameter names | Add `//JAVAC_OPTIONS -parameters` |
-| `Port 8090 was already in use` | Server already running | Stop it, or pass `--server.port=8091` |
+| `Port 8070 was already in use` | Server already running | Stop it, or pass `--server.port=8071` |
 | Agent answers without calling tools | Small model, or vague tool description | Sharpen the `description`; try a bigger model |
 | Tool call crashes the agent | Exception leaks out | Throw a clear message; MCP returns it as a tool error |

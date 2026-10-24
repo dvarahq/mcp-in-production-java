@@ -6,7 +6,7 @@ One file, three tools: `search_products`, `check_stock`, `create_quote`.
 jbang CommerceServer.java
 ```
 
-The server listens on `http://localhost:8090/mcp` (streamable HTTP).
+The server listens on `http://localhost:8070/mcp` (streamable HTTP).
 
 Look at it with the MCP Inspector:
 
@@ -14,7 +14,7 @@ Look at it with the MCP Inspector:
 npx @modelcontextprotocol/inspector
 ```
 
-Choose **Streamable HTTP**, enter `http://localhost:8090/mcp`, connect, open **Tools**.
+Choose **Streamable HTTP**, enter `http://localhost:8070/mcp`, connect, open **Tools**.
 
 ## What to notice
 

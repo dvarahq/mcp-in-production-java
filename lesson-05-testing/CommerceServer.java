@@ -19,14 +19,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
-// A small commerce MCP server: three tools over streamable HTTP at http://localhost:8090/mcp
+// A small commerce MCP server: three tools over streamable HTTP at http://localhost:8070/mcp
 @SpringBootApplication
 public class CommerceServer {
 
     public static void main(String[] args) {
         var app = new SpringApplication(CommerceServer.class);
         app.setDefaultProperties(Map.of(
-                "server.port", "8090",
+                "server.port", "8070",
                 "spring.ai.mcp.server.name", "commerce",
                 "spring.ai.mcp.server.version", "1.0.0",
                 "spring.ai.mcp.server.protocol", "STREAMABLE"));
@@ -56,9 +56,10 @@ public class CommerceServer {
                 description = "Find products whose name contains the given words. Returns SKU, name and unit price.",
                 annotations = @McpAnnotations(readOnlyHint = true, destructiveHint = false))
         List<Product> searchProducts(@McpToolParam(description = "Words to look for, e.g. 'usb-c cable'") String query) {
-            var words = query.toLowerCase().split("\\s+");
+            // Ignore case and spaces, so "2m" matches "2 m".
+            var words = List.of(query.toLowerCase().split("\\s+"));
             return CATALOG.values().stream()
-                    .filter(p -> List.of(words).stream().allMatch(w -> p.name().toLowerCase().contains(w)))
+                    .filter(p -> words.stream().allMatch(w -> p.name().toLowerCase().replace(" ", "").contains(w)))
                     .toList();
         }
 

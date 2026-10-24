@@ -20,7 +20,7 @@ public class SmokeTest {
     static int failures = 0;
 
     public static void main(String[] args) {
-        var url = args.length > 0 ? args[0] : "http://localhost:8090";
+        var url = args.length > 0 ? args[0] : "http://localhost:8070";
         var transport = HttpClientStreamableHttpTransport.builder(url).build();
 
         try (var client = McpClient.sync(transport).build()) {

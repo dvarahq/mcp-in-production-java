@@ -24,7 +24,7 @@ export MODEL_API_KEY=<your key>
 export MODEL=<a tool-capable model>
 ```
 
-`MCP_URL` changes the MCP server address (default `http://localhost:8090`).
+`MCP_URL` changes the MCP server address (default `http://localhost:8070`).
 
 ## What to notice
 

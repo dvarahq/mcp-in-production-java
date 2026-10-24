@@ -34,7 +34,7 @@ public class CommerceAgent {
                 "spring.ai.openai.chat.options.model", env("MODEL", "qwen3:8b"),
                 // The MCP server from lesson 3.
                 "spring.ai.mcp.client.type", "SYNC",
-                "spring.ai.mcp.client.streamable-http.connections.commerce.url", env("MCP_URL", "http://localhost:8090"),
+                "spring.ai.mcp.client.streamable-http.connections.commerce.url", env("MCP_URL", "http://localhost:8070"),
                 "spring.ai.mcp.client.streamable-http.connections.commerce.endpoint", "/mcp"));
         app.run(args);
     }
