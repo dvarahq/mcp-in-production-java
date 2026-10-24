@@ -72,3 +72,5 @@ The tool receives `[REDACTED_CREDIT_CARD]`. But the model's reply can still repe
 the question went **straight to the model**, and in this course only tool calls pass through DVARA.
 To cover that path too, send model traffic through DVARA's LLM gateway, which applies the same
 PII actions to prompts and responses.
+
+Stop DVARA with `./dvara/stop.sh` before the next lesson.
