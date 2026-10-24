@@ -15,6 +15,8 @@ Every server and agent is a single Java file run with [JBang](https://www.jbang.
 
 | Lesson | Folder | Run |
 |---|---|---|
+| 1. How MCP works | `lesson-01-how-mcp-works` | `jbang CommerceServer.java`, then `./exchange.sh` |
+| 2. The production gap | `lesson-02-production-gap` | `jbang CommerceServer.java \| tee server.log`, then `./gap.sh` |
 | 3. Build an MCP server | `lesson-03-mcp-server` | `jbang CommerceServer.java` |
 | 4. Build the agent | `lesson-04-agent` | `jbang CommerceAgent.java "Quote me 3 USB-C cables"` |
 | 5. Test and debug MCP | `lesson-05-testing` | `jbang SmokeTest.java` |
