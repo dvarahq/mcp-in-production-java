@@ -75,4 +75,4 @@ Each record is signed and carries the previous record's signature, so changing, 
 reordering one breaks the chain at that point. The chain **detects** changes; it does not stop
 them. Protect database access and the signing secret (`DVARA_AUDIT_HMAC_SECRET`) separately.
 
-The chain stays broken. Start over with `./dvara/stop.sh --reset`.
+The chain stays broken. Start over with `./dvara/stop.sh --reset`. Stop DVARA before the next lesson.
