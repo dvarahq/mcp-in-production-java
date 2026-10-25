@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//JAVA 21+
+//JAVA 25+
 //JAVAC_OPTIONS -parameters
 //DEPS org.springframework.boot:spring-boot-dependencies:4.1.1@pom
 //DEPS org.springframework.ai:spring-ai-bom:2.0.1@pom

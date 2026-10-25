@@ -5,7 +5,7 @@ Every server and agent is a single Java file run with [JBang](https://www.jbang.
 
 ## You need
 
-- Java 21+
+- Java 25+
 - JBang: `curl -Ls https://sh.jbang.dev | bash -s - app setup`
 - A model. Default is free and local: [Ollama](https://ollama.com) with `ollama pull qwen3:8b`.
   Any OpenAI-compatible model works — see lesson 4.

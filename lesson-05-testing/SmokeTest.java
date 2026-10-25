@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//JAVA 21+
+//JAVA 25+
 //DEPS io.modelcontextprotocol.sdk:mcp:2.0.0
 //DEPS org.slf4j:slf4j-nop:2.0.17
 
