@@ -11,6 +11,8 @@ jbang CommerceServer.java | tee server.log   # terminal 1
 ./gap.sh                                     # terminal 2
 ```
 
+`gap.sh` stops after each gap. Press Enter for the next one (or run it with `NO_PAUSE=1`).
+
 ```text
 1. Who are you? Nobody asks.
    This script sent no credential at all. The server answered: {"sku":"HUB-USBC-7","available":14}

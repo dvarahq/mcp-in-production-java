@@ -5,7 +5,14 @@ set -euo pipefail
 cd "$(dirname "$0")"
 URL=${1:-http://localhost:8070/mcp}
 
-step() { printf '\n\033[1;31m%s\033[0m\n' "$*"; }
+# In a terminal, wait for Enter before each gap after the first, so you can look at one at a time.
+# Piped or redirected, or with NO_PAUSE=1, it runs straight through.
+first=1
+step() {
+  if [[ -z $first && -t 0 && -t 1 && -z ${NO_PAUSE:-} ]]; then read -rs; fi
+  first=
+  printf '\n\033[1;31m%s\033[0m\n' "$*"
+}
 post() { # body, [session] -> the JSON answer, whether plain or an event stream
   curl -s "$URL" -H 'Content-Type: application/json' -H 'Accept: application/json, text/event-stream' \
     ${2:+-H "Mcp-Session-Id: $2"} -d "$1" | sed 's/^data://' | grep '^{' || true
@@ -49,7 +56,7 @@ fi
 cat <<'EOF'
 
 The rest of the course closes each gap:
-   1 -> lesson 8  (OAuth: every agent signs in)       4 -> lesson 12 (a person approves)
-   2 -> lesson 10  (PII redacted both ways)             5 -> lesson 13 (rate limit per agent)
-   3 -> lesson 11 (loop detection, kill a session)     6 -> lesson 9  (signed audit with the agent's identity)
+   1 -> lesson 8  (OAuth: every agent signs in)      4 -> lesson 12 (a person approves)
+   2 -> lesson 10 (PII redacted both ways)           5 -> lesson 13 (rate limit per agent)
+   3 -> lesson 11 (loop detection, kill a session)   6 -> lesson 9  (signed audit with the agent's identity)
 EOF
