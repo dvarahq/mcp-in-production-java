@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: lesson-05-testing
+        working-directory: lesson-06-testing
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
