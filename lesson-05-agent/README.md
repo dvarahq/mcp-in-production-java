@@ -14,6 +14,13 @@ Terminal 2:
 jbang CommerceAgent.java "Quote me 2 of the 7-port USB-C hub"
 ```
 
+The agent prints each tool call before the answer, so you can watch it choose:
+
+```text
+-> search_products {"query":"7-port USB-C hub"}
+-> create_quote {"sku":"HUB-USBC-7","quantity":2}
+```
+
 ## Use a different model
 
 Defaults: local Ollama, `qwen3:8b`, no key. Any OpenAI-compatible endpoint works:

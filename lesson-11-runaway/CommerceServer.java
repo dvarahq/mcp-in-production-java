@@ -145,7 +145,9 @@ public class CommerceServer {
         private static Product product(String sku) {
             var product = CATALOG.get(sku);
             if (product == null) {
-                throw new IllegalArgumentException("Unknown SKU: " + sku);
+                // Spring AI sends the message, then its cause's message: what went wrong, then what to do.
+                throw new IllegalArgumentException("Unknown SKU: " + sku + ".",
+                        new IllegalArgumentException("Use search_products to find a valid SKU."));
             }
             return product;
         }

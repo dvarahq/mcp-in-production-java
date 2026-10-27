@@ -8,10 +8,14 @@
 
 package commerce;
 
+import java.util.Arrays;
 import java.util.Map;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.model.ToolContext;
 import org.springframework.ai.mcp.SyncMcpToolCallbackProvider;
+import org.springframework.ai.tool.ToolCallback;
+import org.springframework.ai.tool.definition.ToolDefinition;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -51,8 +55,25 @@ public class CommerceAgent {
                         A quote is a draft, never an order.
                         """)
                     .build();
-            System.out.println(agent.prompt().user(question).tools(tools).call().content());
+            var traced = Arrays.stream(tools.getToolCallbacks()).map(Traced::new).toArray();
+            System.out.println(agent.prompt().user(question).tools(traced).call().content());
         };
+    }
+
+    // Prints each tool call the model makes, so you can watch the agent choose.
+    record Traced(ToolCallback tool) implements ToolCallback {
+        public ToolDefinition getToolDefinition() {
+            return tool.getToolDefinition();
+        }
+
+        public String call(String input) {
+            return call(input, null);
+        }
+
+        public String call(String input, ToolContext context) {
+            System.out.println("-> " + tool.getToolDefinition().name() + " " + input);
+            return tool.call(input, context);
+        }
     }
 
     static String env(String name, String fallback) {
